@@ -82,7 +82,7 @@ nav{
 	font-size: 20px;
 }
 .name h1{
-	font-family:Poppins;
+	/* font-family:Poppins; */
 	font-size: 45px;
 	margin:0px;
 	letter-spacing: 3px;
@@ -573,7 +573,7 @@ body {
     border: 4px solid #FF9F55;
     top: 15px;
     border-radius: 50%;
-    z-index: 1;
+    z-index: 0.5;
   }
   
   /* Place the container to the left */
@@ -593,7 +593,7 @@ body {
     position: absolute;
     top: 22px;
     width: 0;
-    z-index: 1;
+    z-index: 0.5;
     right: 30px;
     border: medium solid white;
     border-width: 10px 0 10px 10px;
@@ -607,7 +607,7 @@ body {
     position: absolute;
     top: 22px;
     width: 0;
-    z-index: 1;
+    z-index: 0.5;
     left: 30px;
     border: medium solid white;
     border-width: 10px 10px 10px 0;
