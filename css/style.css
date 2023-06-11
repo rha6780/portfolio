@@ -41,7 +41,10 @@ nav{
 	box-shadow:2px 2px 12px rgba(0, 0, 0, 0.05); 
 	z-index: 1;
 }
-
+.svg {
+    width: 4%;
+    height: 4%;
+}
 .menu{
 	display: flex;
 }
@@ -181,12 +184,12 @@ nav{
 	width: 180px;
 	height: 40px;
 	border-radius: 20px;
-	border: none;
+	border: solid;
 	outline: none;
-	background-color:#17d1ac;
+	background-color:white;
 }
 .projects-text button:hover{
-	background-color: #FFFFFF;
+	background-color: #2ECCFA;
 	transition: all ease 0.3s;
 }
 
@@ -203,9 +206,13 @@ nav{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
-	padding-top: 40px ;
+	/* justify-content: center; */
+	padding-top: 100px ;
 	
+}
+
+.project-item {
+    width: 90%;
 }
 
 .s-heading h1{
@@ -227,25 +234,24 @@ nav{
 }
 .s-box{
 	background-color: #2B2B2B;
-	width:350px;
-	height: 500px;
-	margin: 20px;
+	width: 100%;
+	height: fit-content;
+	margin: 10px;
 	border-radius: 10px;
 	overflow: hidden;
 	box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
-	position: relative;
+	/* position: relative; */
 }
 .b-container{
 	display: flex;
 	justify-content: center;
 	align-content: center;
-
-	
+    padding: 20px;
 }
 .s-b-img{
-	width: 100%;
-	height: 70%;
-	
+	width: 50%;
+	height: 80%;
+    padding-right: 10px;
 }
 .s-b-img img{
 	width:100%;
@@ -254,29 +260,62 @@ nav{
 }
 .s-b-text{
 	width: 100%;
-	height: 30%;
-	background-color:#1E1E1E;
-	display:flex;
+	height: 100%;
+	background-color:#2B2B2B;
+	/* display:flex; */
 	justify-content: center;
 	align-items: center;
 	text-align: center;
+    padding: 20px;
 }
+
+.s-b-text button{
+	width: fit-content;
+	height: 40px;
+	border-radius: 20px;
+	border: solid;
+	outline: none;
+    font-size: 1rem;
+	background-color:white;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.s-b-text button:hover{
+	background-color: #2ECCFA;
+	transition: all ease 0.3s;
+}
+
+.git-container {
+    align-items: center;
+    background-color: #929292;
+    width: 90%;
+    padding: 20px;
+    border-radius: 10px;
+}
+
 .s-b-text a{
 	margin: 0px;
 	color:#FFFFFF;
-	font-size: 1.1rem;
+	font-size: 1.2rem;
 	font-family: calibri;
 	display: block;
     display: -webkit-box;
-	max-width: 80%;
+	/* max-width: 80%; */
     -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
+    /* -webkit-box-orient: vertical; */
     overflow: hidden;
     text-overflow: ellipsis;
+    padding: 5px;
+    
 }
 .s-b-text a:hover{
 	color:rgba(255,255,255,0.50)
 }
+.s-b-text a img {
+    padding-bottom: 1px;
+    vertical-align: middle;
+}
+
 .s-type{
 	font-family: calibri;
 	color:#FFFFFF;
