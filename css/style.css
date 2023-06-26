@@ -251,6 +251,10 @@ nav{
 	align-content: center;
     padding: 20px;
 }
+.b-container h2{
+	color: white;
+	text-align: left;
+}
 .s-b-img{
 	width: 50%;
 	height: 80%;
@@ -763,6 +767,9 @@ body {
 	}
 	.s-b-img img{
 		object-fit:cover;
+	}
+	.photo img {
+		width: 600px;
 	}
 	#contact-form form{
 		width:95% !important;

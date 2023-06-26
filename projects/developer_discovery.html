@@ -33,19 +33,37 @@
                 </div>
                 <div class="b-container">
                     <div class="s-b-text">
-                        <div class="git-container">
-                            <p style="font-size: 1.2rem;"> Github Repository</p>
-                            <p>* 각각 레포지토리로 링크 되어있습니다.</p>
+                        <div class="photo">
+                            <img width="500" alt="Screen Shot 2023-06-16 at 6 30 06 PM"
+                                src="https://github.com/rha6780/Backend_Developer_Discovery/assets/47859845/24493f00-174f-44e3-98f6-2fa0a275325f">
+                            <img width="500" alt="Screen Shot 2023-06-16 at 6 30 22 PM"
+                                src="https://github.com/rha6780/Backend_Developer_Discovery/assets/47859845/1e87456d-a616-4224-b838-40ef4f27de89">
+                            <!-- <img width="500" alt="Screen Shot 2023-06-16 at 6 40 17 PM"
+                                src="https://github.com/rha6780/Backend_Developer_Discovery/assets/47859845/f3e4d70c-9d5b-4b94-94d2-e22a7d0e5133"> -->
+                        </div>
+
+                        <br />
+                        <button onclick="location.href='https://rha6780.github.io/categories/developer_discovery'">프로젝트
+                            기록 보러가기</button>
+
+                        <br />
+                        <br />
+                        <br />
+
+                        <h2>DB ERD와 초기 설계</h2>
+                        <div class="photo">
+                            <img style="max-width: 700px;"
+                                src="https://github.com/rha6780/Backend_Developer_Discovery/assets/47859845/2ad4fd1f-2c06-4dbb-96ef-f6a7d7b0ebbe">
+                        </div>
+                        <div style="text-align: left;">
+                            <p>- API 리스트</p>
+                            <p>Users: JWT 를 이용한 유저 회원가입, 로그인, 비밀번호 찾기, 탈퇴 API, 프로필 유저 정보, 비밀번호 변경 API</p>
+                            <p>Posts: 글 작성, 수정, 삭제, 리스트 API 등 완료, 마크 다운 에디터 적용</p>
+                        </div>
+                        <br />
+                        <!-- <div class="git-container">
+                            <p style="font-size: 1.2rem;"> Frontend </p>
                             <br />
-                            <a href="https://github.com/rha6780/Backend_Developer_Discovery">
-                                <div>
-                                    🔗 Backend :
-                                    <img alt="Python"
-                                        src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white">
-                                    <img alt="Django"
-                                        src="https://img.shields.io/badge/Django-04B431.svg?&style=for-the-badge&logo=Django&logoColor=white" />
-                                </div>
-                            </a>
                             <a href="https://github.com/rha6780/Frontend_Developer_Discovery">
                                 <div>
                                     🔗 Frontend :
@@ -55,6 +73,12 @@
                                         src="https://img.shields.io/badge/Next-000000?style=for-the-badge&logo=Next.js&logoColor=white" />
                                 </div>
                             </a>
+                        </div>
+                        <p>Vercel 앱으로 배포</p> -->
+
+                        <!-- <div class="git-container">
+                            <p style="font-size: 1.2rem;"> Devops </p>
+                            <br />
                             <a href="https://github.com/rha6780/Infra_Developer_Discovery">
                                 <div>
                                     🔗 DevOps :
@@ -68,44 +92,42 @@
                                         src="https://img.shields.io/badge/aws-FF9900?style=for-the-badge&logo=amazonaws&logoColor=black" />
                                 </div>
                             </a>
-                        </div>
+                        </div> -->
                         <br />
-                        <p>* 데모 사이트에 api 는 현재 aws ssl 설정이 안되어 있어 동작하지 않습니다.</p>
-                        <button onclick="location.href='https://frontend-developer-discovery.vercel.app/'">데모
-                            사이트</button>
-                        <button onclick="location.href='https://rha6780.github.io/categories/developer_discovery'">프로젝트
-                            기록</button>
-                        <p>백엔드, 프론트, 인프라 까지 각각 따로 구성하여 개발 부터 AWS 배포까지 모든 과정 개발</p>
-                        <p>기존 Discovery 채널과 같이 개발자에게 유용한 정보를 제공하려는 목적을 가지고 있다.</p>
                         <br />
-                        <p>📍 주요 기능 : 유저 회원가입 부터 탈퇴 기능 & 개발과 관련된 글 작성 기능</p>
 
-                        <br />
-                        <p>- DB ERD</p>
-                        <div class="photo">
-                            <img
-                                src="https://github.com/rha6780/Backend_Developer_Discovery/assets/47859845/2ad4fd1f-2c06-4dbb-96ef-f6a7d7b0ebbe">
+                        <div style="text-align: left;">
+                            <h2>배포 과정 & 인프라 설정</h2>
+                            <!-- <p>배포 과정</p> -->
+                            <p>1. Backend 깃허브 레포에서 Github Actions 를 통해 백엔드 Docker 이미지를 ECR에 푸쉬한다. </p>
+                            <p>2. 이미지 빌드가 다 되면 Github Actions 중 Ec2 Deploy actions를 통해서 Ec2 배포 과정이 진행된다.</p>
+                            <p> - CodeDeploy가 실행되고, before_install 스크립트를 통해서 EC2에 필요한 라이브러리 등을 다운 받는다.</p>
+                            <p> - 이후 after_install 스크립트로 기존 docker 컨테이너를 내리고, ECR의 최신 이미지를 pull -> Docker run 하는 방식의
+                                스크립트가 실행된다.</p>
                         </div>
-                        <p>- API 리스트</p>
-                        <p>Users: JWT 를 이용한 유저 회원가입, 로그인, 비밀번호 찾기, 탈퇴 API, 프로필 유저 정보, 비밀번호 변경 API</p>
-                        <p>Posts: 글 작성, 수정, 삭제, 리스트 API 등 완료, 마크 다운 에디터 적용</p>
-                        <div class="photo">
-                            <img width="500" alt="Screen Shot 2023-06-16 at 6 30 06 PM"
-                                src="https://github.com/rha6780/Backend_Developer_Discovery/assets/47859845/24493f00-174f-44e3-98f6-2fa0a275325f">
-                            <img width="500" alt="Screen Shot 2023-06-16 at 6 30 22 PM"
-                                src="https://github.com/rha6780/Backend_Developer_Discovery/assets/47859845/1e87456d-a616-4224-b838-40ef4f27de89">
-                            <img width="500" alt="Screen Shot 2023-06-16 at 6 40 17 PM"
-                                src="https://github.com/rha6780/Backend_Developer_Discovery/assets/47859845/f3e4d70c-9d5b-4b94-94d2-e22a7d0e5133">
-                        </div>
-                        <br />
-                        <p>- Infra architecture</p>
-                        <p>도메인 구매 이후, 추후 배포 예정</p>
                         <div class="photo">
                             <img width="500" alt="244013524-f49f86a1-f243-4a2a-b8ae-eef58c5d2b93"
                                 src="https://github.com/rha6780/portfolio/assets/47859845/01b7abc7-f450-4528-976d-5d6a9f5b0bda">
                         </div>
-                        <p>Terraform 을 이용한 IaC 방식으로 관리</p>
-                        <p>비용적 문제로 EC2 대신 lambda&api_gateway 또는 다른 클라우드 생각 중</p>
+                        <p>Terraform 을 이용한 IaC 방식으로 관리, 도메인은 porkbun에서 구매 설정</p>
+
+                        <h2>프로젝트를 진행하면서..</h2>
+                        <div style="text-align: left;">
+
+                            <p>Django 에서 JWT 구현 방식과 기능을 위한 다양한 라이브러리를 접할 수 있어서 좋았습니다. 저 혼자 프론트, 백엔드, 데브옵스를 각각 진행하게 되면서 각
+                                직무에
+                                대한 삽질, 경험을 늘리게 된 것 같습니다. 다만, 기획과 디자인을 따로 지정하지 않아서 목적이 추상적이었고, 마땅한 문서도 작성하지 않아 진행이 조금 느렸던
+                                것 같습니다.
+                                내심 기획과 디자이너의 중요성을 다시 느끼게 되었습니다.</p>
+                            <p> 백엔드에서는 전체적으로 API 구성, 테스트 조건을 잡는 작업이 힘들었습니다. TDD 방식이 아니고 그렇다고 BDD 방식도 아니라, 즉흥적으로 개발하다보니
+                                다시 보충해야하는 이슈가 있었습니다. 각 테스크에 대해서 정확한 목표 설정과 일정관리를 하지 못한 점이 아쉽습니다.</p>
+                            <p> 프론트에서는 JWT를 어떻게 저장할지와 Hydrate 이슈가 있어 고생한 경험이 있습니다. 덕분에 JWT 에 대해서 백엔드 입장 뿐만아니라 프론트에서 보통
+                                어떤 방식을
+                                이용하는지 확인 할 수 있는 좋은 경험이있습니다.</p>
+                            <p>데브옵스에서는 Terraform을 이용해서 코드를 이용한 관리를 구성했는데요. 덕분에 이전 회사에서 배운 것들을 제 기술로 완전히 터득하게 되었습니다. 조금
+                                아쉬운
+                                것은 개인 프로젝트라서 다른 데브옵스 팀원과 어떤식으로 코드를 관리하는지 궁금하다는 점이 있습니다. </p>
+                        </div>
                     </div>
                 </div>
             </div>
