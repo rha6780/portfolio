@@ -40,65 +40,17 @@
                             <img width="40%" alt="site_03" src="../images/developer_discovery/site_03.png">
                         </div>
 
-                        <br />
+                        <p> 개발 관련 글 게시판 웹 페이지로 기본적인 유저 기능, 글 작성, 댓글 작성 등의 기능이 있습니다.</p>
+                        <br>
                         <button onclick="location.href='https://rha6780.github.io/categories/developer_discovery'">프로젝트
                             기록 보러가기</button>
-
-                        <br />
-                        <br />
-                        <br />
-                        <h2 style="text-align: center;">인프라 구조</h2>
-                        <p> 모든 인프라는 Terraform 으로 관리합니다. Infra_Developer_Discovery 깃허브를 참고 하세요.</p>
-                        <div class="photo">
-                            <img width="90%" alt="docker_infra"
-                                src="../images/developer_discovery/DeveloperDiscovery_with_nginx.png">
-                        </div>
-                        <div style="text-align: left;">
-                            <p> 📍 구성</p>
-                            <p> - Nginx를 이용해 image의 경우 S3에서 가져오도록 하고, api는 Django 에서 불러오도록 합니다.</p>
-                            <p> - S3(업로드), RDS 등은 특정 VPC 내부에서만 접근하도록 설정하였습니다.</p>
-                            <p> - 나머지 페이지는 Nextjs에서 가져와서 응답하게 됩니다.</p>
-                            <br>
-                            <p>⚠️ 비용 문제</p>
-                            <p> - 비용이 약 월 7만 5천원 정도 산정이 되는 상태이고, 개인 프로젝트로서 유지에는 문제가 있어 AWS 서빙을 중단할 예정입니다.</p>
-                            <p> - Heroku 등 다른 서비스를 생각중이고 상황에 따라 개발 자체를 중단할 예정입니다.</p>
-
-                        </div>
-                        <br>
-                        <br>
-                        <div style="text-align: left;">
-                            <p> ⚠️ 이슈 및 구조 변경 내역</p>
-                            <details style="color: white;">
-                                <summary>초기 구성</summary>
-                                <div style="text-align: center;">
-                                    <img width="80%" alt="first_infra"
-                                        src="../images/developer_discovery/DeveloperDiscoveryInfra.png">
-                                </div>
-                                <br>
-                                초기 구성에서는 EC2에 Docker 이미지를 불러와 실행시키도록 스크립트를 수행하도록 설정하였습니다. 이 당시에는 Nextjs가 따로 없었지만, 상호작용을
-                                위해서 Vercel을 도입하였습니다.
-                            </details>
-                            <br>
-                            <details style="color: white;">
-                                <summary>Vercel 구성</summary>
-                                <div style="text-align: center;">
-                                    <img width="90%" alt="first_infra"
-                                        src="../images/developer_discovery/DeveloperDiscovery.png">
-                                </div>
-                                <br> Vercel 도입으로 화면이 정상적으로 보여지게 되었습니다. 하지만, 인프라 관리를 AWS, Vercel 따로 봐야 하는 것, 비용 등 통합이 안되는
-                                문제가
-                                있었고, 특히 렌더링 속도와 관련해서 Vercel에서 페이지를 불러오는 네트워크 비용이 발생하여서 최종적으로 EC2 내부로 옮기게 되었습니다. 이와 관련해서
-                                EC2 인스턴스 업그레이드와 내부 Nginx를 통한 라우팅을 설정하게 되었습니다.
-                            </details>
-                        </div>
                         <br>
                         <br>
                         <br>
                         <h2 style="text-align: center;">DB ERD와 API</h2>
                         <br>
                         <div class="photo">
-                            <img width="90%"
-                                src="https://github.com/rha6780/Backend_Developer_Discovery/assets/47859845/2ad4fd1f-2c06-4dbb-96ef-f6a7d7b0ebbe">
+                            <img width="90%" src="../images/developer_discovery/Developer Discovery_ERD.png">
                         </div>
                         <div style="text-align: left;">
                             <style type="text/css">
@@ -239,6 +191,11 @@
                                         <td class="tg-0lax">현재 유저의 이메일 또는 이름을 변경</td>
                                     </tr>
                                     <tr>
+                                        <td class="tg-0lax"><span class="patch">[PATCH]</span> /api/v1/users/image</td>
+                                        <td class="tg-0lax">유저 프로필 이미지 변경</td>
+                                        <td class="tg-0lax">현재 유저의 이미지 S3 업로드</td>
+                                    </tr>
+                                    <tr>
                                         <td class="tg-0lax"><span class="patch">[PATCH]</span> /api/v1/users/password
                                         </td>
                                         <td class="tg-0lax">비밀번호 변경</td>
@@ -349,9 +306,57 @@
                             </table>
 
                         </div>
-                        <br />
-                        <br />
 
+                        <br>
+                        <br>
+                        <br>
+                        <h2 style="text-align: center;">인프라 구조</h2>
+                        <p> 모든 인프라는 Terraform 으로 관리합니다. Infra_Developer_Discovery 깃허브를 참고 하세요.</p>
+                        <div class="photo">
+                            <img width="90%" alt="docker_infra"
+                                src="../images/developer_discovery/DeveloperDiscovery_with_nginx.png">
+                        </div>
+                        <div style="text-align: left;">
+                            <p> 📍 구성</p>
+                            <p> - Nginx를 이용해 image의 경우 S3에서 가져오도록 하고, api는 Django 에서 불러오도록 합니다.</p>
+                            <p> - S3(업로드), RDS 등은 특정 VPC 내부에서만 접근하도록 설정하였습니다.</p>
+                            <p> - 나머지 페이지는 Nextjs에서 가져와서 응답하게 됩니다.</p>
+                            <br>
+                            <p>⚠️ 비용 문제</p>
+                            <p> - 비용이 약 월 7만 5천원 정도 산정이 되는 상태이고, 개인 프로젝트로서 유지에는 문제가 있어 AWS 서빙을 중단할 예정입니다.</p>
+                            <p> - Heroku 등 다른 서비스를 생각중이고 상황에 따라 개발 자체를 중단할 예정입니다.</p>
+
+                        </div>
+                        <br>
+                        <br>
+                        <div style="text-align: left;">
+                            <p> ⚠️ 이슈 및 구조 변경 내역</p>
+                            <details style="color: white;">
+                                <summary>초기 구성</summary>
+                                <div style="text-align: center;">
+                                    <img width="80%" alt="first_infra"
+                                        src="../images/developer_discovery/DeveloperDiscoveryInfra.png">
+                                </div>
+                                <br>
+                                초기 구성에서는 EC2에 Docker 이미지를 불러와 실행시키도록 스크립트를 수행하도록 설정하였습니다. 이 당시에는 Nextjs가 따로 없었지만, 상호작용을
+                                위해서 Vercel을 도입하였습니다.
+                            </details>
+                            <br>
+                            <details style="color: white;">
+                                <summary>Vercel 구성</summary>
+                                <div style="text-align: center;">
+                                    <img width="90%" alt="first_infra"
+                                        src="../images/developer_discovery/DeveloperDiscovery.png">
+                                </div>
+                                <br> Vercel 도입으로 화면이 정상적으로 보여지게 되었습니다. 하지만, 인프라 관리를 AWS, Vercel 따로 봐야 하는 것, 비용 등 통합이 안되는
+                                문제가
+                                있었고, 특히 렌더링 속도와 관련해서 Vercel에서 페이지를 불러오는 네트워크 비용이 발생하여서 최종적으로 EC2 내부로 옮기게 되었습니다. 이와 관련해서
+                                EC2 인스턴스 업그레이드와 내부 Nginx를 통한 라우팅을 설정하게 되었습니다.
+                            </details>
+                        </div>
+
+                        <br>
+                        <br>
 
                         <h2>프로젝트를 진행하면서..</h2>
                         <div style="text-align: left;">
@@ -361,6 +366,11 @@
                                 대한 삽질, 경험을 늘리게 된 것 같습니다. 다만, 기획과 디자인을 따로 지정하지 않아서 목적이 추상적이었고, 마땅한 문서도 작성하지 않아 진행이 조금 느렸던
                                 것 같습니다.
                                 내심 기획과 디자이너의 중요성을 다시 느끼게 되었습니다.</p>
+                            <br>
+                            <p>실제 AWS 로 다른 사람들도 접속할 수 있는 웹사이트로는 처음인 프로젝트인 만큼 애착이 강했지만, 현재 제 실력으로는 경쟁력도 없는 서비스이고, 더 발전하기
+                                어렵다는 생각이 들었습니다. 따라서, 추후 개선된 상태로 다시 오픈하거나, 다른 프로젝트와 연계해서 진행할 예정입니다. 확실한 것은 실제 서비스를 구성하면서
+                                필요한 것과 비용관리, 배포 구조, 서비스 구조에 대해서 깊이있게 공부하게 된 것 같습니다. 이외에도 기술을 내것으로
+                                만들게 된 계기가 되어서 후회는 없는 것 같습니다.</p>
                         </div>
                     </div>
                 </div>
