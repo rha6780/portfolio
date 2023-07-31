@@ -33,13 +33,11 @@
                 </div>
                 <div class="b-container">
                     <div class="s-b-text">
+                        <p>사이트 이미지</p>
                         <div class="photo">
-                            <img width="500" alt="Screen Shot 2023-06-16 at 6 30 06 PM"
-                                src="https://github.com/rha6780/Backend_Developer_Discovery/assets/47859845/24493f00-174f-44e3-98f6-2fa0a275325f">
-                            <img width="500" alt="Screen Shot 2023-06-16 at 6 30 22 PM"
-                                src="https://github.com/rha6780/Backend_Developer_Discovery/assets/47859845/1e87456d-a616-4224-b838-40ef4f27de89">
-                            <!-- <img width="500" alt="Screen Shot 2023-06-16 at 6 40 17 PM"
-                                src="https://github.com/rha6780/Backend_Developer_Discovery/assets/47859845/f3e4d70c-9d5b-4b94-94d2-e22a7d0e5133"> -->
+                            <img width="40%" alt="site_01" src="../images/developer_discovery/site_01.png">
+                            <img width="40%" alt="site_02" src="../images/developer_discovery/site_02.png">
+                            <img width="40%" alt="site_03" src="../images/developer_discovery/site_03.png">
                         </div>
 
                         <br />
@@ -49,67 +47,311 @@
                         <br />
                         <br />
                         <br />
-
-                        <h2>DB ERD와 초기 설계</h2>
+                        <h2 style="text-align: center;">인프라 구조</h2>
+                        <p> 모든 인프라는 Terraform 으로 관리합니다. Infra_Developer_Discovery 깃허브를 참고 하세요.</p>
                         <div class="photo">
-                            <img style="max-width: 700px;"
+                            <img width="90%" alt="docker_infra"
+                                src="../images/developer_discovery/DeveloperDiscovery_with_nginx.png">
+                        </div>
+                        <div style="text-align: left;">
+                            <p> 📍 구성</p>
+                            <p> - Nginx를 이용해 image의 경우 S3에서 가져오도록 하고, api는 Django 에서 불러오도록 합니다.</p>
+                            <p> - S3(업로드), RDS 등은 특정 VPC 내부에서만 접근하도록 설정하였습니다.</p>
+                            <p> - 나머지 페이지는 Nextjs에서 가져와서 응답하게 됩니다.</p>
+                            <br>
+                            <p>⚠️ 비용 문제</p>
+                            <p> - 비용이 약 월 7만 5천원 정도 산정이 되는 상태이고, 개인 프로젝트로서 유지에는 문제가 있어 AWS 서빙을 중단할 예정입니다.</p>
+                            <p> - Heroku 등 다른 서비스를 생각중이고 상황에 따라 개발 자체를 중단할 예정입니다.</p>
+
+                        </div>
+                        <br>
+                        <br>
+                        <div style="text-align: left;">
+                            <p> ⚠️ 이슈 및 구조 변경 내역</p>
+                            <details style="color: white;">
+                                <summary>초기 구성</summary>
+                                <div style="text-align: center;">
+                                    <img width="80%" alt="first_infra"
+                                        src="../images/developer_discovery/DeveloperDiscoveryInfra.png">
+                                </div>
+                                <br>
+                                초기 구성에서는 EC2에 Docker 이미지를 불러와 실행시키도록 스크립트를 수행하도록 설정하였습니다. 이 당시에는 Nextjs가 따로 없었지만, 상호작용을
+                                위해서 Vercel을 도입하였습니다.
+                            </details>
+                            <br>
+                            <details style="color: white;">
+                                <summary>Vercel 구성</summary>
+                                <div style="text-align: center;">
+                                    <img width="90%" alt="first_infra"
+                                        src="../images/developer_discovery/DeveloperDiscovery.png">
+                                </div>
+                                <br> Vercel 도입으로 화면이 정상적으로 보여지게 되었습니다. 하지만, 인프라 관리를 AWS, Vercel 따로 봐야 하는 것, 비용 등 통합이 안되는
+                                문제가
+                                있었고, 특히 렌더링 속도와 관련해서 Vercel에서 페이지를 불러오는 네트워크 비용이 발생하여서 최종적으로 EC2 내부로 옮기게 되었습니다. 이와 관련해서
+                                EC2 인스턴스 업그레이드와 내부 Nginx를 통한 라우팅을 설정하게 되었습니다.
+                            </details>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <h2 style="text-align: center;">DB ERD와 API</h2>
+                        <br>
+                        <div class="photo">
+                            <img width="90%"
                                 src="https://github.com/rha6780/Backend_Developer_Discovery/assets/47859845/2ad4fd1f-2c06-4dbb-96ef-f6a7d7b0ebbe">
                         </div>
                         <div style="text-align: left;">
-                            <p>- API 리스트</p>
-                            <p>Users: JWT 를 이용한 유저 회원가입, 로그인, 비밀번호 찾기, 탈퇴 API, 프로필 유저 정보, 비밀번호 변경 API</p>
-                            <p>Posts: 글 작성, 수정, 삭제, 리스트 API 등 완료, 마크 다운 에디터 적용</p>
-                        </div>
-                        <br />
-                        <!-- <div class="git-container">
-                            <p style="font-size: 1.2rem;"> Frontend </p>
-                            <br />
-                            <a href="https://github.com/rha6780/Frontend_Developer_Discovery">
-                                <div>
-                                    🔗 Frontend :
-                                    <img alt="TypeScript"
-                                        src="https://img.shields.io/badge/Typescript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white" />
-                                    <img alt="Next.js"
-                                        src="https://img.shields.io/badge/Next-000000?style=for-the-badge&logo=Next.js&logoColor=white" />
-                                </div>
-                            </a>
-                        </div>
-                        <p>Vercel 앱으로 배포</p> -->
+                            <style type="text/css">
+                                table {
+                                    width: 90%;
+                                    margin-left: auto;
+                                    margin-right: auto;
+                                }
 
-                        <!-- <div class="git-container">
-                            <p style="font-size: 1.2rem;"> Devops </p>
-                            <br />
-                            <a href="https://github.com/rha6780/Infra_Developer_Discovery">
-                                <div>
-                                    🔗 DevOps :
-                                    <img alt="Terraform"
-                                        src="https://img.shields.io/badge/Terraform-7B42BC.svg?&style=for-the-badge&logo=Terraform&logoColor=white" />
-                                    <img alt="GithubAction"
-                                        src="https://img.shields.io/badge/Github_Action-000000.svg?&style=for-the-badge&logo=github&logoColor=white" />
-                                    <img alt="Docker"
-                                        src="https://img.shields.io/badge/Docker-2496ED.svg?&style=for-the-badge&logo=Docker&logoColor=white" />
-                                    <img alt="AWS"
-                                        src="https://img.shields.io/badge/aws-FF9900?style=for-the-badge&logo=amazonaws&logoColor=black" />
-                                </div>
-                            </a>
-                        </div> -->
+                                .tg {
+                                    border-collapse: collapse;
+                                    border-color: #9ABAD9;
+                                    border-spacing: 0;
+                                }
+
+                                .tg td {
+                                    background-color: #EBF5FF;
+                                    border-color: #9ABAD9;
+                                    border-style: solid;
+                                    border-width: 1px;
+                                    color: #444;
+                                    font-family: Arial, sans-serif;
+                                    font-size: 14px;
+                                    overflow: hidden;
+                                    padding: 10px 5px;
+                                    word-break: normal;
+                                }
+
+                                .tg th {
+                                    background-color: #237edf;
+                                    border-color: #9ABAD9;
+                                    border-style: solid;
+                                    border-width: 1px;
+                                    color: #fff;
+                                    font-family: Arial, sans-serif;
+                                    font-size: 14px;
+                                    font-weight: normal;
+                                    overflow: hidden;
+                                    padding: 10px 5px;
+                                    word-break: normal;
+                                }
+
+                                .tg .tg-0lax {
+                                    text-align: left;
+                                    vertical-align: top
+                                }
+
+                                .tg .tg-0lax-ah {
+                                    background-color: #409cff;
+                                    border-color: #9ABAD9;
+                                    border-style: solid;
+                                    border-width: 1px;
+                                    color: #fff;
+                                    text-align: left;
+                                    vertical-align: top
+                                }
+
+                                .tg .get {
+                                    color: #237edf;
+                                }
+
+                                .tg .post {
+                                    color: rgb(43, 214, 43);
+                                }
+
+                                .tg .patch {
+                                    color: #00ffdd;
+                                }
+
+                                .tg .delete {
+                                    color: red;
+                                }
+                            </style>
+                            <p style="text-align: center;">📍 API 리스트</p>
+
+                            <br>
+                            <table class="tg">
+                                <thead>
+                                    <tr>
+                                        <th class="tg-0lax">URL</th>
+                                        <th class="tg-0lax">기능</th>
+                                        <th class="tg-0lax">설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="tg-0lax-ah">Accounts</td>
+                                        <td class="tg-0lax-ah">회원 관련 API</td>
+                                        <td class="tg-0lax-ah"> -- </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="post">[POST]</span> /api/v1/accounts/signup
+                                        </td>
+                                        <td class="tg-0lax">회원가입</td>
+                                        <td class="tg-0lax">이메일이 valid 한 경우(중복, 이메일 형식인지 체크) → password가 8자 이상</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="post">[POST]</span> /api/v1/accounts/signin
+                                        </td>
+                                        <td class="tg-0lax">로그인</td>
+                                        <td class="tg-0lax">이메일 및 비밀번호에 따라 로그인</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="post">[POST]</span>
+                                            /api/v1/accounts/email-check</td>
+                                        <td class="tg-0lax">이메일 체크</td>
+                                        <td class="tg-0lax">해당 이메일이 유효한지(중복, 이메일 양식인지) 체크</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="post">[POST]</span>
+                                            /api/v1/accounts/reset-password</td>
+                                        <td class="tg-0lax">비밀번호 재설정</td>
+                                        <td class="tg-0lax">비밀번호를 잊어버렸을 때 이메일을 작성하면, 이메일 체크 API → 토큰이 포함된 링크를 이메일로
+                                            전송 → 링크를 누르면
+                                            재설정 페이지로 가고, 토큰이 유효한지 체크하고 비밀번호 변경</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="delete">[DELETE]</span>
+                                            /api/v1/accounts/withdrawal</td>
+                                        <td class="tg-0lax">탈퇴</td>
+                                        <td class="tg-0lax">soft-delete가 적용됨 → TODO: 추후 이메일 등 개인정보를 삭제하는 로직, Cron 필요
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax-ah">Users</td>
+                                        <td class="tg-0lax-ah">유저 프로필 API</td>
+                                        <td class="tg-0lax-ah"> -- </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="get">[GET]</span> /api/v1/users</td>
+                                        <td class="tg-0lax">현재 유저 정보</td>
+                                        <td class="tg-0lax">현재 로그인된 유저 정보를 반환 → 닉네임, id, email, 프로필 이미지
+                                            or 로그인하지 않은 상태라면 빈 값</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="patch">[PATCH]</span> /api/v1/users</td>
+                                        <td class="tg-0lax">유저 정보 변경</td>
+                                        <td class="tg-0lax">현재 유저의 이메일 또는 이름을 변경</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="patch">[PATCH]</span> /api/v1/users/password
+                                        </td>
+                                        <td class="tg-0lax">비밀번호 변경</td>
+                                        <td class="tg-0lax">현재 유저의 비밀번호 변경</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax-ah">Tokens</td>
+                                        <td class="tg-0lax-ah">유저 JWT API</td>
+                                        <td class="tg-0lax-ah"> -- </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="post">[POST]</span> /api/v1/tokens</td>
+                                        <td class="tg-0lax">토큰 생성</td>
+                                        <td class="tg-0lax">유저 로그인, 회원 가입시 토큰 생성</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="patch">[PATCH]</span> /api/v1/tokens/refresh
+                                        </td>
+                                        <td class="tg-0lax">토큰 재설정</td>
+                                        <td class="tg-0lax">토큰 재설정 -> 프론트에서 토큰이 있고, 401이 응답되었을때 refresh가 호출되고 다시 원래
+                                            요청이
+                                            호출되는 형식</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="patch">[PATCH]</span> /api/v1/tokens/verify
+                                        </td>
+                                        <td class="tg-0lax">토큰 유효성 검사</td>
+                                        <td class="tg-0lax"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax-ah">Posts</td>
+                                        <td class="tg-0lax-ah">글 API</td>
+                                        <td class="tg-0lax-ah"> -- </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="get">[GET]</span> /api/v1/posts/list</td>
+                                        <td class="tg-0lax">글 리스트</td>
+                                        <td class="tg-0lax">작성된 글 목록을 10개씩 페이지 네이션하여 응답</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="get">[GET]</span> /api/v1/posts/{id}</td>
+                                        <td class="tg-0lax">글 정보</td>
+                                        <td class="tg-0lax">작성된 글의 내용, 작성자, 작성일 등을 응답</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="post">[POST]</span> /api/v1/posts</td>
+                                        <td class="tg-0lax">글 생성</td>
+                                        <td class="tg-0lax">생성 시 제목, 빈 내용 불가능</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="patch">[PATCH]</span> /api/v1/posts/image</td>
+                                        <td class="tg-0lax">글 이미지 업로드</td>
+                                        <td class="tg-0lax">글 작성 시 마크다운에 올리는 이미지를 S3로 업로드</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="patch">[PATCH]</span> /api/v1/posts/{id}</td>
+                                        <td class="tg-0lax">글 수정</td>
+                                        <td class="tg-0lax">작성자 만 수정 가능 → 작성된 글의 제목, 내용을 수정</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="delete">[DELETE]</span> /api/v1/posts/{id}</td>
+                                        <td class="tg-0lax">글 삭제</td>
+                                        <td class="tg-0lax">작성자 만 삭제 가능 → soft-delete 적용</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="post">[POST]</span> /api/v1/posts/like/{id}
+                                        </td>
+                                        <td class="tg-0lax">글 좋아요</td>
+                                        <td class="tg-0lax">1명당 1번의 좋아요만 가능하도록 적용</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="tg-0lax-ah">Comments</td>
+                                        <td class="tg-0lax-ah">댓글 API</td>
+                                        <td class="tg-0lax-ah"> -- </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="get">[GET]</span> /api/v1/posts/{post_id}/list
+                                        </td>
+                                        <td class="tg-0lax">댓글 리스트</td>
+                                        <td class="tg-0lax">작성된 댓글 목록을 10개씩 페이지 네이션하여 응답</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="post">[POST]</span> /api/v1/posts/{post_id}
+                                        </td>
+                                        <td class="tg-0lax">댓글 생성</td>
+                                        <td class="tg-0lax">생성 시 빈 내용 불가능</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="patch">[PATCH]</span>
+                                            /api/v1/posts/{post_id}/comments/image</td>
+                                        <td class="tg-0lax">댓글 이미지 업로드</td>
+                                        <td class="tg-0lax">댓글 작성 시 마크다운에 올리는 이미지를 S3로 업로드</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="patch">[PATCH]</span>
+                                            /api/v1/posts/{post_id}/comments/{id}</td>
+                                        <td class="tg-0lax">댓글 수정</td>
+                                        <td class="tg-0lax">작성자 만 수정 가능 → 내용을 수정</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="delete">[DELETE]</span>
+                                            /api/v1/posts/{post_id}/comments/{id}</td>
+                                        <td class="tg-0lax">댓글 삭제</td>
+                                        <td class="tg-0lax">작성자 만 삭제 가능 → soft-delete 적용</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
                         <br />
                         <br />
 
-                        <div style="text-align: left;">
-                            <h2>배포 과정 & 인프라 설정</h2>
-                            <!-- <p>배포 과정</p> -->
-                            <p>1. Backend 깃허브 레포에서 Github Actions 를 통해 백엔드 Docker 이미지를 ECR에 푸쉬한다. </p>
-                            <p>2. 이미지 빌드가 다 되면 Github Actions 중 Ec2 Deploy actions를 통해서 Ec2 배포 과정이 진행된다.</p>
-                            <p> - CodeDeploy가 실행되고, before_install 스크립트를 통해서 EC2에 필요한 라이브러리 등을 다운 받는다.</p>
-                            <p> - 이후 after_install 스크립트로 기존 docker 컨테이너를 내리고, ECR의 최신 이미지를 pull -> Docker run 하는 방식의
-                                스크립트가 실행된다.</p>
-                        </div>
-                        <div class="photo">
-                            <img width="500" alt="244013524-f49f86a1-f243-4a2a-b8ae-eef58c5d2b93"
-                                src="https://github.com/rha6780/portfolio/assets/47859845/01b7abc7-f450-4528-976d-5d6a9f5b0bda">
-                        </div>
-                        <p>Terraform 을 이용한 IaC 방식으로 관리, 도메인은 porkbun에서 구매 설정</p>
 
                         <h2>프로젝트를 진행하면서..</h2>
                         <div style="text-align: left;">
@@ -119,14 +361,6 @@
                                 대한 삽질, 경험을 늘리게 된 것 같습니다. 다만, 기획과 디자인을 따로 지정하지 않아서 목적이 추상적이었고, 마땅한 문서도 작성하지 않아 진행이 조금 느렸던
                                 것 같습니다.
                                 내심 기획과 디자이너의 중요성을 다시 느끼게 되었습니다.</p>
-                            <p> 백엔드에서는 전체적으로 API 구성, 테스트 조건을 잡는 작업이 힘들었습니다. TDD 방식이 아니고 그렇다고 BDD 방식도 아니라, 즉흥적으로 개발하다보니
-                                다시 보충해야하는 이슈가 있었습니다. 각 테스크에 대해서 정확한 목표 설정과 일정관리를 하지 못한 점이 아쉽습니다.</p>
-                            <p> 프론트에서는 JWT를 어떻게 저장할지와 Hydrate 이슈가 있어 고생한 경험이 있습니다. 덕분에 JWT 에 대해서 백엔드 입장 뿐만아니라 프론트에서 보통
-                                어떤 방식을
-                                이용하는지 확인 할 수 있는 좋은 경험이있습니다.</p>
-                            <p>데브옵스에서는 Terraform을 이용해서 코드를 이용한 관리를 구성했는데요. 덕분에 이전 회사에서 배운 것들을 제 기술로 완전히 터득하게 되었습니다. 조금
-                                아쉬운
-                                것은 개인 프로젝트라서 다른 데브옵스 팀원과 어떤식으로 코드를 관리하는지 궁금하다는 점이 있습니다. </p>
                         </div>
                     </div>
                 </div>
