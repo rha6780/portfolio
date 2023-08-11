@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--title-icon--------->
-    <link rel="shortcut icon" href="../images/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="shortcut icon" href="../../images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../css/style.css" />
     <!--using FontAwesome---------------->
     <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
 </head>
@@ -29,15 +29,15 @@
                     <h1>Developer Discovery</h1>
                     <br />
                     <p>👤 개인 프로젝트 - 1인 개발 (WEB)</p>
-                    <p>2023-04 ~ 진행중</p>
+                    <p>2023-04 ~ 2023-07</p>
                 </div>
                 <div class="b-container">
                     <div class="s-b-text">
                         <p>사이트 이미지</p>
                         <div class="photo">
-                            <img width="40%" alt="site_01" src="../images/developer_discovery/site_01.png">
-                            <img width="40%" alt="site_02" src="../images/developer_discovery/site_02.png">
-                            <img width="40%" alt="site_03" src="../images/developer_discovery/site_03.png">
+                            <img width="40%" alt="site_01" src="../../images/developer_discovery/site_01.png">
+                            <img width="40%" alt="site_02" src="../../images/developer_discovery/site_02.png">
+                            <img width="40%" alt="site_03" src="../../images/developer_discovery/site_03.png">
                         </div>
 
                         <p> 개발 관련 글 게시판 웹 페이지로 기본적인 유저 기능, 글 작성, 댓글 작성 등의 기능이 있습니다.</p>
@@ -50,7 +50,7 @@
                         <h2 style="text-align: center;">DB ERD와 API</h2>
                         <br>
                         <div class="photo">
-                            <img width="90%" src="../images/developer_discovery/Developer Discovery_ERD.png">
+                            <img width="90%" src="../../images/developer_discovery/Developer Discovery_ERD.png">
                         </div>
                         <div style="text-align: left;">
                             <style type="text/css">
@@ -124,6 +124,9 @@
                                     color: red;
                                 }
                             </style>
+
+                            <br>
+
                             <p style="text-align: center;">📍 API 리스트</p>
 
                             <br>
@@ -316,6 +319,7 @@
                             <img width="90%" alt="docker_infra"
                                 src="../images/developer_discovery/DeveloperDiscovery_with_nginx.png">
                         </div>
+                        <br>
                         <div style="text-align: left;">
                             <p> 📍 구성</p>
                             <p> - Nginx를 이용해 image의 경우 S3에서 가져오도록 하고, api는 Django 에서 불러오도록 합니다.</p>
@@ -323,7 +327,7 @@
                             <p> - 나머지 페이지는 Nextjs에서 가져와서 응답하게 됩니다.</p>
                             <br>
                             <p>⚠️ 비용 문제</p>
-                            <p> - 비용이 약 월 7만 5천원 정도 산정이 되는 상태이고, 개인 프로젝트로서 유지에는 문제가 있어 AWS 서빙을 중단할 예정입니다.</p>
+                            <p> - 비용이 약 월 8만 5천원 정도 산정이 되는 상태이고, 개인 프로젝트로서 유지에는 문제가 있어 AWS 서빙을 중단할 예정입니다.</p>
                             <p> - Heroku 등 다른 서비스를 생각중이고 상황에 따라 개발 자체를 중단할 예정입니다.</p>
 
                         </div>
@@ -335,7 +339,7 @@
                                 <summary>초기 구성</summary>
                                 <div style="text-align: center;">
                                     <img width="80%" alt="first_infra"
-                                        src="../images/developer_discovery/DeveloperDiscoveryInfra.png">
+                                        src="../../images/developer_discovery/DeveloperDiscoveryInfra.png">
                                 </div>
                                 <br>
                                 초기 구성에서는 EC2에 Docker 이미지를 불러와 실행시키도록 스크립트를 수행하도록 설정하였습니다. 이 당시에는 Nextjs가 따로 없었지만, 상호작용을
@@ -346,7 +350,7 @@
                                 <summary>Vercel 구성</summary>
                                 <div style="text-align: center;">
                                     <img width="90%" alt="first_infra"
-                                        src="../images/developer_discovery/DeveloperDiscovery.png">
+                                        src="../../images/developer_discovery/DeveloperDiscovery.png">
                                 </div>
                                 <br> Vercel 도입으로 화면이 정상적으로 보여지게 되었습니다. 하지만, 인프라 관리를 AWS, Vercel 따로 봐야 하는 것, 비용 등 통합이 안되는
                                 문제가
@@ -367,7 +371,16 @@
                                 것 같습니다.
                                 내심 기획과 디자이너의 중요성을 다시 느끼게 되었습니다.</p>
                             <br>
-                            <p>실제 AWS 로 다른 사람들도 접속할 수 있는 웹사이트로는 처음인 프로젝트인 만큼 애착이 강했지만, 현재 제 실력으로는 경쟁력도 없는 서비스이고, 더 발전하기
+                        </div>
+
+                        <br>
+
+                        <h2>프로젝트를 마치며...</h2>
+                        <div style="text-align: left;">
+                            <p>월 8만원 정도의 서버비용이 발생하는 상태인데, 이를 유지하기에 힘들다고 판단하여 프로젝트를 종료하게 되었습니다.</p>
+                            <img width="90%" alt="infra_billing" src="../../images/developer_discovery/billing.png">
+
+                            <p>실제 다른 사람들도 접속할 수 있는 웹사이트로는 처음인 프로젝트인 만큼 애착이 강했지만, 현재 제 실력으로는 경쟁력도 없는 서비스이고, 더 발전하기
                                 어렵다는 생각이 들었습니다. 따라서, 추후 개선된 상태로 다시 오픈하거나, 다른 프로젝트와 연계해서 진행할 예정입니다. 확실한 것은 실제 서비스를 구성하면서
                                 필요한 것과 비용관리, 배포 구조, 서비스 구조에 대해서 깊이있게 공부하게 된 것 같습니다. 이외에도 기술을 내것으로
                                 만들게 된 계기가 되어서 후회는 없는 것 같습니다.</p>
