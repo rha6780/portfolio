@@ -202,7 +202,7 @@ nav{
 
 #services{
 	width:100%;
-	height:100vh;
+	/* height:100vh; */
 	box-sizing: border-box;
 	/* font-family: calibri; */
 	display: flex;
@@ -303,11 +303,13 @@ nav{
 
 .s-b-text a{
 	margin: 0px;
+	width: fit-content;
 	color:#FFFFFF;
 	font-size: 1.2rem;
 	font-family: calibri;
-	display: block;
-    display: -webkit-box;
+	
+    /* display: -webkit-box; */
+	text-align: center;
 	/* max-width: 80%; */
     -webkit-line-clamp: 4;
     /* -webkit-box-orient: vertical; */
@@ -705,6 +707,23 @@ body {
   .content p {
       color: black;
   }
+
+  /* Footer */
+#footer {
+	padding: 5%;
+	height: fit-content;
+	text-align: center;
+	background-color: #1A2027;
+	color: white;
+	text-decoration: none;
+}
+
+
+#footer a {
+	color: white;
+	text-decoration: none;
+}
+
   
   /* Media queries - Responsive timeline on screens less than 600px wide */
   @media screen and (max-width: 600px) {

@@ -1,0 +1,325 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>rha6780 Portfolio</title>
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--title-icon--------->
+    <link rel="shortcut icon" href="../../images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../css/style.css" />
+    <!--using FontAwesome---------------->
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!--main------------------------>
+    <!--navigation-------------------------------->
+    <nav>
+        <a href="/portfolio/" class="logo">rha6780</a>
+        <div class="toggle"></div>
+        <a href="/" class="lang">🧢 Blog</a>
+    </nav>
+    <!--name--------------------------->
+    <section id="services">
+        <div id="developerdiscovery" class="project-item">
+            <div class="s-box">
+                <div class="s-heading">
+                    <h1>Algo Solved</h1>
+                    <br />
+                    <p>👤 개인 프로젝트 - 동료 모집 중</p>
+                    <p>2023-10 ~ 진행중</p>
+                </div>
+                <div class="b-container">
+                    <div class="s-b-text">
+                        <p>사이트 이미지</p>
+                        <div class="photo">
+                            <img width="40%" alt="site_01" src="../../images/algo_solved/login_page.png">
+                        </div>
+
+                        <p> 백준 알고리즘 문제들에 대한 통계 및 풀이 공유를 위한 웹 사이트.</p>
+                        <br>
+                        <button onclick="location.href='https://rha6780.github.io/categories/developer_discovery'">프로젝트
+                            기록 보러가기</button>
+                        <br>
+                        <br>
+                        <br>
+                        <h2 style="text-align: center;">DB ERD와 API(진행중)</h2>
+                        <br>
+                        <div class="photo">
+                            <!-- <img width="90%" src="../../images/developer_discovery/Developer Discovery_ERD.png"> -->
+                        </div>
+                        <div style="text-align: left;">
+                            <style type="text/css">
+                                table {
+                                    width: 90%;
+                                    margin-left: auto;
+                                    margin-right: auto;
+                                }
+
+                                .tg {
+                                    border-collapse: collapse;
+                                    border-color: #9ABAD9;
+                                    border-spacing: 0;
+                                }
+
+                                .tg td {
+                                    background-color: #EBF5FF;
+                                    border-color: #9ABAD9;
+                                    border-style: solid;
+                                    border-width: 1px;
+                                    color: #444;
+                                    font-family: Arial, sans-serif;
+                                    font-size: 14px;
+                                    overflow: hidden;
+                                    padding: 10px 5px;
+                                    word-break: normal;
+                                }
+
+                                .tg th {
+                                    background-color: #237edf;
+                                    border-color: #9ABAD9;
+                                    border-style: solid;
+                                    border-width: 1px;
+                                    color: #fff;
+                                    font-family: Arial, sans-serif;
+                                    font-size: 14px;
+                                    font-weight: normal;
+                                    overflow: hidden;
+                                    padding: 10px 5px;
+                                    word-break: normal;
+                                }
+
+                                .tg .tg-0lax {
+                                    text-align: left;
+                                    vertical-align: top
+                                }
+
+                                .tg .tg-0lax-ah {
+                                    background-color: #409cff;
+                                    border-color: #9ABAD9;
+                                    border-style: solid;
+                                    border-width: 1px;
+                                    color: #fff;
+                                    text-align: left;
+                                    vertical-align: top
+                                }
+
+                                .tg .get {
+                                    color: #237edf;
+                                }
+
+                                .tg .post {
+                                    color: rgb(43, 214, 43);
+                                }
+
+                                .tg .patch {
+                                    color: #00ffdd;
+                                }
+
+                                .tg .delete {
+                                    color: red;
+                                }
+                            </style>
+
+                            <br>
+
+                            <!-- <p style="text-align: center;">📍 API 리스트</p>
+
+                            <br>
+                            <table class="tg">
+                                <thead>
+                                    <tr>
+                                        <th class="tg-0lax">URL</th>
+                                        <th class="tg-0lax">기능</th>
+                                        <th class="tg-0lax">설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="tg-0lax-ah">Accounts</td>
+                                        <td class="tg-0lax-ah">회원 관련 API</td>
+                                        <td class="tg-0lax-ah"> -- </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="post">[POST]</span> /api/v1/accounts/signup
+                                        </td>
+                                        <td class="tg-0lax">회원가입</td>
+                                        <td class="tg-0lax">이메일이 valid 한 경우(중복, 이메일 형식인지 체크) → password가 8자 이상</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="post">[POST]</span> /api/v1/accounts/signin
+                                        </td>
+                                        <td class="tg-0lax">로그인</td>
+                                        <td class="tg-0lax">이메일 및 비밀번호에 따라 로그인</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="post">[POST]</span>
+                                            /api/v1/accounts/email-check</td>
+                                        <td class="tg-0lax">이메일 체크</td>
+                                        <td class="tg-0lax">해당 이메일이 유효한지(중복, 이메일 양식인지) 체크</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="post">[POST]</span>
+                                            /api/v1/accounts/reset-password</td>
+                                        <td class="tg-0lax">비밀번호 재설정</td>
+                                        <td class="tg-0lax">비밀번호를 잊어버렸을 때 이메일을 작성하면, 이메일 체크 API → 토큰이 포함된 링크를 이메일로
+                                            전송 → 링크를 누르면
+                                            재설정 페이지로 가고, 토큰이 유효한지 체크하고 비밀번호 변경</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="delete">[DELETE]</span>
+                                            /api/v1/accounts/withdrawal</td>
+                                        <td class="tg-0lax">탈퇴</td>
+                                        <td class="tg-0lax">soft-delete가 적용됨 → TODO: 추후 이메일 등 개인정보를 삭제하는 로직, Cron 필요
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax-ah">Users</td>
+                                        <td class="tg-0lax-ah">유저 프로필 API</td>
+                                        <td class="tg-0lax-ah"> -- </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="get">[GET]</span> /api/v1/users</td>
+                                        <td class="tg-0lax">현재 유저 정보</td>
+                                        <td class="tg-0lax">현재 로그인된 유저 정보를 반환 → 닉네임, id, email, 프로필 이미지
+                                            or 로그인하지 않은 상태라면 빈 값</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="patch">[PATCH]</span> /api/v1/users</td>
+                                        <td class="tg-0lax">유저 정보 변경</td>
+                                        <td class="tg-0lax">현재 유저의 이메일 또는 이름을 변경</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="patch">[PATCH]</span> /api/v1/users/image</td>
+                                        <td class="tg-0lax">유저 프로필 이미지 변경</td>
+                                        <td class="tg-0lax">현재 유저의 이미지 S3 업로드</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="patch">[PATCH]</span> /api/v1/users/password
+                                        </td>
+                                        <td class="tg-0lax">비밀번호 변경</td>
+                                        <td class="tg-0lax">현재 유저의 비밀번호 변경</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax-ah">Tokens</td>
+                                        <td class="tg-0lax-ah">유저 JWT API</td>
+                                        <td class="tg-0lax-ah"> -- </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="post">[POST]</span> /api/v1/tokens</td>
+                                        <td class="tg-0lax">토큰 생성</td>
+                                        <td class="tg-0lax">유저 로그인, 회원 가입시 토큰 생성</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="patch">[PATCH]</span> /api/v1/tokens/refresh
+                                        </td>
+                                        <td class="tg-0lax">토큰 재설정</td>
+                                        <td class="tg-0lax">토큰 재설정 -> 프론트에서 토큰이 있고, 401이 응답되었을때 refresh가 호출되고 다시 원래
+                                            요청이
+                                            호출되는 형식</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="patch">[PATCH]</span> /api/v1/tokens/verify
+                                        </td>
+                                        <td class="tg-0lax">토큰 유효성 검사</td>
+                                        <td class="tg-0lax"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax-ah">Posts</td>
+                                        <td class="tg-0lax-ah">글 API</td>
+                                        <td class="tg-0lax-ah"> -- </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="get">[GET]</span> /api/v1/posts/list</td>
+                                        <td class="tg-0lax">글 리스트</td>
+                                        <td class="tg-0lax">작성된 글 목록을 10개씩 페이지 네이션하여 응답</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="get">[GET]</span> /api/v1/posts/{id}</td>
+                                        <td class="tg-0lax">글 정보</td>
+                                        <td class="tg-0lax">작성된 글의 내용, 작성자, 작성일 등을 응답</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="post">[POST]</span> /api/v1/posts</td>
+                                        <td class="tg-0lax">글 생성</td>
+                                        <td class="tg-0lax">생성 시 제목, 빈 내용 불가능</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="patch">[PATCH]</span> /api/v1/posts/image</td>
+                                        <td class="tg-0lax">글 이미지 업로드</td>
+                                        <td class="tg-0lax">글 작성 시 마크다운에 올리는 이미지를 S3로 업로드</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="patch">[PATCH]</span> /api/v1/posts/{id}</td>
+                                        <td class="tg-0lax">글 수정</td>
+                                        <td class="tg-0lax">작성자 만 수정 가능 → 작성된 글의 제목, 내용을 수정</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="delete">[DELETE]</span> /api/v1/posts/{id}</td>
+                                        <td class="tg-0lax">글 삭제</td>
+                                        <td class="tg-0lax">작성자 만 삭제 가능 → soft-delete 적용</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="post">[POST]</span> /api/v1/posts/like/{id}
+                                        </td>
+                                        <td class="tg-0lax">글 좋아요</td>
+                                        <td class="tg-0lax">1명당 1번의 좋아요만 가능하도록 적용</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="tg-0lax-ah">Comments</td>
+                                        <td class="tg-0lax-ah">댓글 API</td>
+                                        <td class="tg-0lax-ah"> -- </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="get">[GET]</span> /api/v1/posts/{post_id}/list
+                                        </td>
+                                        <td class="tg-0lax">댓글 리스트</td>
+                                        <td class="tg-0lax">작성된 댓글 목록을 10개씩 페이지 네이션하여 응답</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="post">[POST]</span> /api/v1/posts/{post_id}
+                                        </td>
+                                        <td class="tg-0lax">댓글 생성</td>
+                                        <td class="tg-0lax">생성 시 빈 내용 불가능</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="patch">[PATCH]</span>
+                                            /api/v1/posts/{post_id}/comments/image</td>
+                                        <td class="tg-0lax">댓글 이미지 업로드</td>
+                                        <td class="tg-0lax">댓글 작성 시 마크다운에 올리는 이미지를 S3로 업로드</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="patch">[PATCH]</span>
+                                            /api/v1/posts/{post_id}/comments/{id}</td>
+                                        <td class="tg-0lax">댓글 수정</td>
+                                        <td class="tg-0lax">작성자 만 수정 가능 → 내용을 수정</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-0lax"><span class="delete">[DELETE]</span>
+                                            /api/v1/posts/{post_id}/comments/{id}</td>
+                                        <td class="tg-0lax">댓글 삭제</td>
+                                        <td class="tg-0lax">작성자 만 삭제 가능 → soft-delete 적용</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div> -->
+                        
+
+                        <br>
+                        <br>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="footer">
+
+    </section>
+</body>
+
+</html>
